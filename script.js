@@ -1,0 +1,29 @@
+const textareaFrom = document.querySelector("#textareaFrom");
+const textareaTo = document.querySelector("#textareaTo");
+const btnTranslate = document.querySelector("#btnTranslate");
+const selects = document.querySelectorAll("selector");
+
+const countries = {
+    "en-GB": "Inglês",
+    "es-ES": "Espanhol",
+    "it-IT": "Italiano",
+    "ja-JP": "japonês",
+    "pt-br": "português",
+
+};
+
+
+selects.forEach((tag)=> { 
+    for(let country in countries){
+        let selected;
+        if (tag.className.includes("selectFrom") && country == "pt-BR"){
+            selected= "selected";
+        }else if (tag.className.includes("selectTo") && country == "en-GB"){
+            selected= "selected";
+        }
+
+        const option = `<option value= "${country}" ${selected}>${countries[country]}</option>`;
+        tag
+
+    }
+});
